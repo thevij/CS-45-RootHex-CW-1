@@ -1,7 +1,7 @@
 # FloraHex: Smart Indoor Plant Base & Biophilic AR Ecosystem
 
 <div align="center">
-  <img src="images/banner.jpg" alt="FloraHex Banner" width="100%">
+  <img src="banner.jpg" alt="FloraHex Banner" width="100%">
 </div>
 
 > **An AI-Driven Modular IoT Micro-Habitat, Multimodal Disease Clinic, Light-Validated AR Studio, and Gamified Care Platform.**
