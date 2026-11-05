@@ -1,4 +1,4 @@
-# FloraHex: Smart Indoor Plant Base & Biophilic AR Ecosystem
+# RootHex: Smart Indoor Plant Base & Biophilic AR Ecosystem
 
 <div align="center">
   <img src="banner.jpg" alt="FloraHex Banner" width="100%">
@@ -6,7 +6,7 @@
 
 > **An AI-Driven Modular IoT Micro-Habitat, Multimodal Disease Clinic, Light-Validated AR Studio, and Gamified Care Platform.**
 
-FloraHex is an integrated IoT hardware and mobile software platform engineered to eliminate indoor plant mortality. Designed for both Plant Enthusiasts (B2C) and Interior Designers (B2B), it empowers users to style living spaces sustainably while ensuring optimal plant health through advanced telemetry and AI diagnostics.
+RootHex is an integrated IoT hardware and mobile software platform engineered to eliminate indoor plant mortality. Designed for both Plant Enthusiasts (B2C) and Interior Designers (B2B), it empowers users to style living spaces sustainably while ensuring optimal plant health through advanced telemetry and AI diagnostics.
 
 ---
 
