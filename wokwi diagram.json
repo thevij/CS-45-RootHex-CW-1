@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "author": "ATP IIOT Plant Controller",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -30,
+      "left": 175,
+      "attrs": {
+        "i2cAddress": "0x3c"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay1",
+      "top": 110,
+      "left": 175,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "pump_led",
+      "top": 95,
+      "left": 335,
+      "attrs": {
+        "color": "cyan",
+        "label": "5V Water Pump"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 165,
+      "left": 325,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "soil_pot",
+      "top": -55,
+      "left": -155,
+      "attrs": {
+        "value": "400",
+        "label": "Soil Moisture (IO32)"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "water_pot",
+      "top": 45,
+      "left": -155,
+      "attrs": {
+        "value": "800",
+        "label": "Water Level (IO34)"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 155,
+      "left": -210,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "oled1:VCC", "esp:3V3", "red", [ "v-15", "h-155" ] ],
+    [ "oled1:GND", "esp:GND.2", "black", [ "v-25", "h-95" ] ],
+    [ "oled1:SDA", "esp:21", "cyan", [ "v-10", "h-65", "v85" ] ],
+    [ "oled1:SCL", "esp:22", "yellow", [ "v-20", "h-55", "v65" ] ],
+
+    [ "soil_pot:VCC", "esp:3V3", "red", [ "v20", "h110" ] ],
+    [ "soil_pot:GND", "esp:GND.1", "black", [ "v30", "h100" ] ],
+    [ "soil_pot:SIG", "esp:32", "green", [ "v15", "h120", "v45" ] ],
+
+    [ "water_pot:VCC", "esp:3V3", "red", [ "v-15", "h110" ] ],
+    [ "water_pot:GND", "esp:GND.1", "black", [ "v20", "h100" ] ],
+    [ "water_pot:SIG", "esp:34", "blue", [ "v-5", "h120" ] ],
+
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h40", "v-145" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h50", "v-55" ] ],
+    [ "ldr1:DO", "esp:33", "orange", [ "h60", "v-90" ] ],
+
+    [ "relay1:VCC", "esp:5V", "red", [ "h-35", "v45", "h-120" ] ],
+    [ "relay1:GND", "esp:GND.3", "black", [ "h-45", "v-15" ] ],
+    [ "relay1:IN", "esp:25", "purple", [ "h-55", "v-50", "h-100" ] ],
+
+    [ "relay1:COM", "esp:5V", "red", [ "h20", "v65", "h-295" ] ],
+    [ "relay1:NO", "pump_led:A", "red", [ "h35", "v-5" ] ],
+    [ "pump_led:C", "r1:1", "black", [ "v15" ] ],
+    [ "r1:2", "esp:GND.3", "black", [ "v25", "h-260" ] ]
+  ],
+  "dependencies": {}
+}
